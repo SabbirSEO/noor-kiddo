@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#10B981">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Noor Kiddo">
+  <meta name="description" content="Playful Islamic Learning Magnet Board for Toddlers & Playgroup in Bangla, English & Arabic">
+  
+  <title>নূর কিডো (Noor Kiddo) - Islamic Playful Learning</title>
+  
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=1.0.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Beautiful rounded fonts for Arabic, Bangla, and Latin -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Canvas for Celebration Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="app-container">
+    <!-- Top Navigation & Control Bar -->
+    <header class="app-header">
+      <div class="brand-group">
+        <div class="app-logo">🌟</div>
+        <div class="app-title-wrap">
+          <h1 class="app-title" id="app-title-text">নূর কিডো</h1>
+          <span class="app-subtitle" id="app-subtitle-text">ছোটদের ইসলামিক খেলার পাঠশালা</span>
+        </div>
+      </div>
+
+      <div class="controls-group">
+        <!-- Star Counter Badge -->
+        <div class="star-badge" id="star-badge" title="মোট অর্জিত স্টার">
+          <span class="star-icon">⭐</span>
+          <span class="star-count" id="star-count-display">0</span>
+        </div>
+
+        <!-- Language Selector Pill -->
+        <div class="lang-switch-container" role="radiogroup" aria-label="Language Selector">
+          <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাংলা</button>
+          <button class="lang-btn" data-lang="en" id="lang-btn-en">English</button>
+          <button class="lang-btn" data-lang="ar" id="lang-btn-ar">العربية</button>
+        </div>
+
+        <!-- Audio Mute/Unmute Button -->
+        <button class="icon-btn audio-btn" id="audio-toggle-btn" aria-label="সাউন্ড অন/অফ" title="শব্দ অন/অফ">
+          <span id="audio-icon">🔊</span>
+        </button>
+
+        <!-- Parent & Teacher Guide Drawer Button -->
+        <button class="icon-btn parent-btn" id="parent-drawer-toggle" aria-label="অভিভাবক ও শিক্ষক গাইড" title="শিক্ষক ও অভিভাবক গাইড">
+          <span>📖</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Interactive Top Stage Panel (In-place update display) -->
+    <section class="stage-section" id="stage-section">
+      <div class="stage-card" id="stage-card">
+        <div class="stage-left">
+          <div class="stage-symbol-bubble" id="stage-symbol-bubble">
+            <span class="stage-symbol" id="stage-symbol">ا</span>
+            <span class="stage-emoji" id="stage-emoji">🕋</span>
+          </div>
+        </div>
+
+        <div class="stage-center">
+          <div class="stage-tags-row">
+            <span class="stage-category-pill" id="stage-category-pill">আরবি হরফ</span>
+            <span class="stage-phonetic" id="stage-phonetic">Alif • আলিফ</span>
+          </div>
+          <h2 class="stage-primary-word" id="stage-primary-word">اَللّٰه (আল্লাহ)</h2>
+          <p class="stage-meaning" id="stage-meaning">আমাদের মহান সৃষ্টিকর্তা ও রব (Allah - The Creator)</p>
+          
+          <!-- Dynamic Visual Tray for Numbers or Details -->
+          <div class="stage-visual-tray" id="stage-visual-tray"></div>
+        </div>
+
+        <div class="stage-right">
+          <button class="stage-sound-btn" id="stage-sound-btn" aria-label="উচ্চারণ শুনুন" title="আবার শুনুন">
+            <span class="sound-wave-icon">🗣️</span>
+            <span class="sound-label" id="sound-label-text">শুনুন</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Shelf Navigation Tabs -->
+    <nav class="shelf-tabs-nav" aria-label="Learning Shelves">
+      <div class="shelf-tabs-scroll" id="shelf-tabs-scroll">
+        <button class="shelf-tab active" data-shelf="arabic">
+          <span class="tab-icon">📖</span>
+          <span class="tab-title" data-i18n="shelf_arabic">আরবি হরফ</span>
+        </button>
+        <button class="shelf-tab" data-shelf="bangla">
+          <span class="tab-icon">🔤</span>
+          <span class="tab-title" data-i18n="shelf_bangla">বাংলা বর্ণ</span>
+        </button>
+        <button class="shelf-tab" data-shelf="english">
+          <span class="tab-icon">🔤</span>
+          <span class="tab-title" data-i18n="shelf_english">English ABC</span>
+        </button>
+        <button class="shelf-tab" data-shelf="numbers">
+          <span class="tab-icon">🔢</span>
+          <span class="tab-title" data-i18n="shelf_numbers">১-২০ গণনা</span>
+        </button>
+        <button class="shelf-tab" data-shelf="duas">
+          <span class="tab-icon">🤲</span>
+          <span class="tab-title" data-i18n="shelf_duas">দৈনন্দিন দু’আ</span>
+        </button>
+        <button class="shelf-tab" data-shelf="prayers">
+          <span class="tab-icon">🕌</span>
+          <span class="tab-title" data-i18n="shelf_prayers">নামাজ ও রুকন</span>
+        </button>
+        <button class="shelf-tab" data-shelf="nature">
+          <span class="tab-icon">🌿</span>
+          <span class="tab-title" data-i18n="shelf_nature">আল্লাহর সৃষ্টি</span>
+        </button>
+        <button class="shelf-tab play-tab" data-shelf="game">
+          <span class="tab-icon">🎮</span>
+          <span class="tab-title" data-i18n="shelf_game">খেলার কুইজ</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sub-Filter Bar (Optional tabs like স্বরবর্ণ/ব্যঞ্জনবর্ণ, 5 Prayers/Wudu, Animals/Fruits) -->
+    <div class="sub-filter-bar" id="sub-filter-bar" style="display: none;">
+      <!-- Dynamically filled by JavaScript -->
+    </div>
+
+    <!-- Main Learning Board Grid -->
+    <main class="board-main">
+      <!-- Magnet Tiles Container -->
+      <div class="magnet-grid" id="magnet-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Play Game / Quiz Container (Rendered when game tab is active) -->
+      <div class="game-container" id="game-container" style="display: none;">
+        <div class="game-card">
+          <div class="game-header">
+            <div class="game-round-pill">
+              <span id="game-round-label">রাউন্ড:</span>
+              <strong id="game-round-num">১ / ১০</strong>
+            </div>
+            <div class="game-score-pill">
+              <span>স্কোর:</span>
+              <strong id="game-score-num">০ ⭐</strong>
+            </div>
+          </div>
+
+          <div class="game-question-box">
+            <div class="game-prompt-icon" id="game-prompt-icon">🔍</div>
+            <h3 class="game-prompt-text" id="game-prompt-text">খুঁজে বের করো: “আলিফ ( ا )”</h3>
+            <button class="game-repeat-btn" id="game-repeat-btn">🔊 প্রশ্নটি আবার শুনুন</button>
+          </div>
+
+          <!-- 4 Big Choice Magnets -->
+          <div class="game-choices-grid" id="game-choices-grid">
+            <!-- 4 game choice buttons inserted dynamically -->
+          </div>
+
+          <div class="game-feedback-banner" id="game-feedback-banner">
+            <span class="feedback-emoji">✨</span>
+            <span class="feedback-text" id="feedback-text">সঠিক উত্তরের ম্যাগনেটে ট্যাপ করো!</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Quick Status -->
+    <footer class="app-footer">
+      <p class="footer-hint" id="footer-hint">ম্যাগনেটে ট্যাপ করে শুনুন ও শিখুন • কোনো ভুল নেই, শুধু আনন্দ!</p>
+    </footer>
+  </div>
+
+  <!-- Parent & Teacher Guide Off-Canvas Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="parent-drawer" id="parent-drawer" aria-label="Curriculum & Teacher Guide">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-icon">📖</span>
+        <div>
+          <h2 class="drawer-title">অভিভাবক ও শিক্ষক সহায়িকা</h2>
+          <span class="drawer-subtitle">Sadman Study • ইসলামিক প্লেগ্রুপ কারিকুলাম</span>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="বন্ধ করুন">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Curriculum Overview Tabs -->
+      <div class="curriculum-tabs">
+        <button class="curr-tab active" data-currtab="overview">সংক্ষিপ্ত রূপরেখা</button>
+        <button class="curr-tab" data-currtab="weekly">সাপ্তাহিক রুটিন</button>
+        <button class="curr-tab" data-currtab="stats">অগ্রগতি ও স্টার</button>
+      </div>
+
+      <!-- Overview Content -->
+      <div class="curr-tab-content active" id="currtab-overview">
+        <div class="info-card emerald">
+          <h3>🌟 লক্ষ্য ও উদ্দেশ্য</h3>
+          <p>২ থেকে ৬ বছর বয়সী শিশুদের খেলাধুলার ছলে আনন্দের সাথে আল্লাহ তা’আলার পরিচয়, আরবি হরফ, বাংলা বর্ণ, সুন্নাত ও আদব-কায়দা শেখানো।</p>
+        </div>
+
+        <div class="info-card">
+          <h3>💡 শিক্ষণ পদ্ধতি (Kiddo Method)</h3>
+          <ul>
+            <li><strong>১টি স্ক্রিন, কোনো পপআপ নয়:</strong> যেকোনো কার্ডে যতখুশি ট্যাপ করলেও শিশু আটকে যায় না।</li>
+            <li><strong>বহুভাষিক স্পষ্টতা:</strong> বাংলা, ইংরেজি ও আরবি সহজে এক ক্লিকেই পরিবর্তনযোগ্য।</li>
+            <li><strong>ইতিবাচক উৎসাহ:</strong> ভুল উত্তরে কোনো লাল ক্রস বা শাস্তি নেই—কেবল মৃদু কাঁপুনি ও আবার চেষ্টা করার সুযোগ।</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Weekly Routine Content (Direct from local PDF curriculum) -->
+      <div class="curr-tab-content" id="currtab-weekly">
+        <div class="week-card">
+          <div class="week-header">
+            <span class="week-badge">সপ্তাহ ১</span>
+            <h4>উজ্জ্বল সূর্য, আকাশ ও আলহামদুলিল্লাহ ☀️</h4>
+          </div>
+          <p><strong>মূল বার্তা:</strong> প্রতিদিন সকালে ঘুম থেকে উঠে আল্লাহর শুকরিয়া আদায়—<em>আলহামদুলিল্লাহ</em> বলা।</p>
+          <div class="curriculum-item-check">
+            <label><input type="checkbox" data-currid="w1-1"> সূর্য ও সুন্দর আকাশ দেখে শুকরিয়া</label>
+            <label><input type="checkbox" data-currid="w1-2"> ঘুম থেকে ওঠার দোয়া অনুশীলন</label>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-header">
+            <span class="week-badge">সপ্তাহ ২</span>
+            <h4>রঙিন ফুল, ফল ও বিসমিল্লাহ 🍎</h4>
+          </div>
+          <p><strong>মূল বার্তা:</strong> মিষ্টি মিষ্টি ফল আল্লাহ তা’আলার নিয়ামত। খাবার শুরুতে <em>বিসমিল্লাহ</em> এবং শেষে <em>আলহামদুলিল্লাহ</em>।</p>
+          <div class="curriculum-item-check">
+            <label><input type="checkbox" data-currid="w2-1"> ডান হাতে খাওয়ার সুন্নাত</label>
+            <label><input type="checkbox" data-currid="w2-2"> খাবার শুরুর দোয়া ‘বিসমিল্লাহ’</label>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-header">
+            <span class="week-badge">সপ্তাহ ৩</span>
+            <h4>সুন্নাত, সালাম ও আদব-কায়দা 🤝</h4>
+          </div>
+          <p><strong>মূল বার্তা:</strong> দেখা হলে সালাম দেওয়া—<em>আসসালামু আলাইকুম</em> এবং হাসিমুখে কথা বলা।</p>
+          <div class="curriculum-item-check">
+            <label><input type="checkbox" data-currid="w3-1"> হাসিমুখে সালাম বিনিময়</label>
+            <label><input type="checkbox" data-currid="w3-2"> বড়দের সম্মান ও ছোটদের স্নেহ</label>
+          </div>
+        </div>
+
+        <div class="week-card">
+          <div class="week-header">
+            <span class="week-badge">সপ্তাহ ৪</span>
+            <h4>আরবি হরফ ও কুরআনের সুর 📖</h4>
+          </div>
+          <p><strong>মূল বার্তা:</strong> প্রথম হরফ ‘আলিফ’ (ا) এবং সূরা আল-ফাতিহার প্রথম আয়াত শোনা।</p>
+          <div class="curriculum-item-check">
+            <label><input type="checkbox" data-currid="w4-1"> আলিফ ও বা হরফ চেনা</label>
+            <label><input type="checkbox" data-currid="w4-2"> সূরা আল-ফাতিহা মধুর সুরে শোনা</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats & Progress -->
+      <div class="curr-tab-content" id="currtab-stats">
+        <div class="progress-summary-card">
+          <div class="stat-box">
+            <span class="stat-number" id="stats-total-stars">0</span>
+            <span class="stat-label">মোট স্টার</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" id="stats-explored-count">0</span>
+            <span class="stat-label">অন্বেষিত ম্যাগনেট</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-group">
+          <div class="progress-label-row">
+            <span>সামগ্রিক শেখার অগ্রগতি</span>
+            <strong id="progress-percentage">0%</strong>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="danger-zone">
+          <button class="reset-btn" id="reset-progress-btn">⚠️ অগ্রগতি রিসেট করুন</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sound Synth & App Scripts -->
+  <script src="app.js?v=1.0.0"></script>
+</body>
+</html>
