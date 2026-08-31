@@ -2,8 +2,6 @@
 
 ছোটদের জন্য ইসলামিক খেলার পাঠশালা (Playgroup & Toddler Islamic Learning Web App) in **বাংলা, English & العربية**.
 
-Closely inspired by the architecture and child-centered tactile design principles of [techjewel/kiddo](https://github.com/techjewel/kiddo).
-
 ---
 
 ## 🚀 কিভাবে চালাবেন (How to Run)
