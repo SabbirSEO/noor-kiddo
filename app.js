@@ -1359,7 +1359,7 @@
         const audioSrc = `assets/audio/duas/${item.id}.mp3`;
         audioPlayer.play(audioSrc, `${item.translit}. ${item.meaningBn}`, 'bn');
       } else if (state.activeShelf === 'kalima') {
-        const audioSrc = `assets/audio/kalima/${item.id}.mp3`;
+        const audioSrc = `assets/audio/kalima/${item.id}.mp3?v=clean8`;
         audioPlayer.play(audioSrc, `${item.titleBn}। ${item.translit}। অর্থ: ${item.meaningBn}`, 'bn');
       } else if (state.activeShelf === 'prayers') {
         const audioSrc = `assets/audio/prayers/${item.id}.mp3`;
