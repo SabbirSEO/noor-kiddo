@@ -1,5 +1,5 @@
 // Service Worker for Noor Kiddo Islamic Learning Board
-const CACHE_NAME = 'noor-kiddo-v5';
+const CACHE_NAME = 'noor-kiddo-v6';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
