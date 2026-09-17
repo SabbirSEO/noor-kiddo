@@ -491,7 +491,13 @@
       meaningBn: 'আল্লাহ ছাড়া কোনো উপাস্য নেই, মুহাম্মাদ (সা.) আল্লাহর রাসুল।',
       meaningEn: 'There is no god but Allah, Muhammad (pbuh) is the Messenger of Allah.',
       emoji: '🕋',
-      theme: 'emerald'
+      theme: 'emerald',
+      words: [
+        { ar: 'لَا إِلٰهَ', bn: 'লা ইলাহা', en: 'There is no god', translit: 'La ilaha' },
+        { ar: 'إِلَّا اللّٰهُ', bn: 'ইল্লাল্লাহু', en: 'except Allah', translit: 'illallah' },
+        { ar: 'مُحَمَّدٌ', bn: 'মুহাম্মাদুর', en: 'Muhammad (pbuh)', translit: 'Muhammadur' },
+        { ar: 'رَسُولُ اللّٰهِ', bn: 'রাসুলুল্লাহ', en: 'is Messenger of Allah', translit: 'Rasulullah' }
+      ]
     },
     {
       id: 'kal-2',
@@ -503,7 +509,15 @@
       meaningBn: 'আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি একক, তাঁর কোনো শরিক নেই। এবং আরও সাক্ষ্য দিচ্ছি যে, নিশ্চয়ই মুহাম্মাদ (সা.) তাঁর বান্দা ও রাসুল।',
       meaningEn: 'I bear witness that there is no god but Allah, alone without partner, and I bear witness that Muhammad is His servant and Messenger.',
       emoji: '☝️',
-      theme: 'sky'
+      theme: 'sky',
+      words: [
+        { ar: 'أَشْهَدُ أَنْ', bn: 'আশহাদু আল্লা', en: 'I bear witness that', translit: 'Ash-hadu alla' },
+        { ar: 'لَا إِلٰهَ إِلَّا اللّٰهُ', bn: 'ইলাহা ইল্লাল্লাহু', en: 'there is no god except Allah', translit: 'ilaha illallah' },
+        { ar: 'وَحْدَهُ لَا شَرِيكَ لَهُ', bn: 'ওয়াহদাহু লা শারীকা লাহু', en: 'Alone without partner', translit: 'wahdahu la sharika lahu' },
+        { ar: 'وَأَشْهَدُ أَنَّ', bn: 'ওয়া আশহাদু আন্না', en: 'and I bear witness that', translit: 'wa ash-hadu anna' },
+        { ar: 'مُحَمَّدًا عَبْدُهُ', bn: 'মুহাম্মাদান আবদুহু', en: 'Muhammad is His servant', translit: "Muhammadan 'abduhu" },
+        { ar: 'وَرَسُولُهُ', bn: 'ওয়া রাসুলুহু', en: 'and His Messenger', translit: 'wa rasuluh' }
+      ]
     },
     {
       id: 'kal-3',
@@ -515,7 +529,15 @@
       meaningBn: 'আল্লাহ অতি পবিত্র, সমস্ত প্রশংসা আল্লাহর, আল্লাহ ছাড়া কোনো উপাস্য নেই এবং আল্লাহ সর্বশ্রেষ্ঠ। মহান আল্লাহর সাহায্য ছাড়া পাপ থেকে বাঁচার এবং সৎ কাজ করার কোনো ক্ষমতা নেই।',
       meaningEn: 'Glory be to Allah, all praise is for Allah, there is no god but Allah, and Allah is the Greatest. There is no power or might except with Allah, the Most High, the Supreme.',
       emoji: '📿',
-      theme: 'amber'
+      theme: 'amber',
+      words: [
+        { ar: 'سُبْحَانَ اللّٰهِ', bn: 'সুবহানাল্লাহি', en: 'Glory be to Allah', translit: 'Subhanallah' },
+        { ar: 'وَالْحَمْدُ لِلّٰهِ', bn: 'ওয়াল হামদুলিল্লাহি', en: 'and all praise to Allah', translit: 'wal hamdulillah' },
+        { ar: 'وَلَا إِلٰهَ إِلَّا اللّٰهُ', bn: 'ওয়া লা ইলাহা ইল্লাল্লাহু', en: 'and no god except Allah', translit: 'wa la ilaha illallah' },
+        { ar: 'وَاللّٰهُ أَكْبَرُ', bn: 'ওয়াল্লাহু আকবার', en: 'and Allah is the Greatest', translit: 'wallahu akbar' },
+        { ar: 'وَلَا حَوْلَ وَلَا قُوَّةَ', bn: 'ওয়া লা হাওলা ওয়া লা কুওয়াতা', en: 'no power and no strength', translit: 'wa la hawla wa la quwwata' },
+        { ar: 'إِلَّا بِاللّٰهِ الْعَلِيِّ الْعَظِيمِ', bn: 'ইল্লা বিল্লাহিল আলিয়্যিল আজীম', en: 'except with Allah the Supreme', translit: "illa billahil 'aliyyil 'azeem" }
+      ]
     },
     {
       id: 'kal-4',
@@ -527,7 +549,16 @@
       meaningBn: 'আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি একক, তাঁর কোনো শরিক নেই। রাজত্ব একমাত্র তাঁরই এবং সমস্ত প্রশংসাও তাঁরই। তিনিই জীবন ও মৃত্যু দেন, সমস্ত কল্যাণ তাঁরই হাতে এবং তিনি সকল কিছুর ওপর সর্বশক্তিমান।',
       meaningEn: 'There is no god but Allah, alone without partner. To Him belongs sovereignty and praise. He gives life and causes death, in His hand is all good, and He has power over all things.',
       emoji: '🌟',
-      theme: 'rose'
+      theme: 'rose',
+      words: [
+        { ar: 'لَا إِلٰهَ إِلَّا اللّٰهُ', bn: 'লা ইলাহা ইল্লাল্লাহু', en: 'There is no god except Allah', translit: 'La ilaha illallah' },
+        { ar: 'وَحْدَهُ لَا شَرِيكَ لَهُ', bn: 'ওয়াহদাহু লা শারীকা লাহু', en: 'He is One without partner', translit: 'wahdahu la sharika lahu' },
+        { ar: 'لَهُ الْمُلْكُ', bn: 'লাহুল মুলকু', en: 'To Him belongs kingdom', translit: 'lahul mulk' },
+        { ar: 'وَلَهُ الْحَمْدُ', bn: 'ওয়া লাহুল হামদু', en: 'and all praise to Him', translit: 'wa lahul hamd' },
+        { ar: 'يُحْيِي وَيُمِيتُ', bn: 'ইউহয়ী ওয়া ইউমীতু', en: 'He gives life & causes death', translit: 'yuhyee wa yumeet' },
+        { ar: 'بِيَدِهِ الْخَيْرُ', bn: 'বিয়াদিহিল খাইরু', en: 'in His hand is all good', translit: 'biyadihil khayr' },
+        { ar: 'وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ', bn: 'ওয়া হুয়া আলা কুল্লি শাইয়িন ক্বাদীর', en: 'He has power over all things', translit: "wa huwa 'ala kulli shay'in qadeer" }
+      ]
     }
   ];
 
@@ -1251,6 +1282,36 @@
         this.elements.stagePhonetic.textContent = item.translit;
         this.elements.stagePrimaryWord.textContent = item.arabic;
         this.elements.stageMeaning.textContent = state.lang === 'en' ? `${item.titleEn}: ${item.meaningEn}` : `${item.titleBn}: ${item.meaningBn}`;
+
+        if (item.words && item.words.length > 0) {
+          const container = document.createElement('div');
+          container.className = 'word-by-word-container';
+
+          const label = document.createElement('div');
+          label.className = 'word-by-word-header';
+          label.textContent = state.lang === 'en' ? '👆 Tap word-by-word to repeat & learn:' : '👆 শব্দে শব্দে ট্যাপ করে শুনো ও বলো:';
+          container.appendChild(label);
+
+          const pillsRow = document.createElement('div');
+          pillsRow.className = 'word-pills-row';
+
+          item.words.forEach(w => {
+            const pill = document.createElement('button');
+            pill.className = 'word-pill';
+            pill.type = 'button';
+            pill.innerHTML = `<span class="pill-ar">${w.ar}</span><span class="pill-bn">${w.bn}</span>`;
+            pill.addEventListener('click', (e) => {
+              e.stopPropagation();
+              sound.playPop();
+              speech.speak(`${w.bn}`, 'bn');
+              pill.classList.add('active-pill');
+              setTimeout(() => pill.classList.remove('active-pill'), 400);
+            });
+            pillsRow.appendChild(pill);
+          });
+          container.appendChild(pillsRow);
+          this.elements.stageVisualTray.appendChild(container);
+        }
       } else if (state.activeShelf === 'prayers') {
         this.elements.stageSymbol.textContent = '🕌';
         this.elements.stageEmoji.textContent = item.emoji;

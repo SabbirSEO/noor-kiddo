@@ -347,6 +347,69 @@ html, body {
   display: inline-block;
 }
 
+/* Word-by-Word Learning Pills */
+.word-by-word-container {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.word-by-word-header {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--emerald-dark);
+}
+
+.word-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.word-pill {
+  background: #ffffff;
+  border: 2px solid var(--emerald-primary);
+  border-radius: 14px;
+  padding: 6px 12px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--emerald-dark);
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.word-pill:hover {
+  transform: translateY(-2px);
+  background: #f0fdf4;
+}
+
+.word-pill:active,
+.word-pill.active-pill {
+  transform: translateY(2px) scale(0.96);
+  box-shadow: 0 0 0 transparent;
+  background: var(--emerald-light);
+}
+
+.pill-ar {
+  font-family: var(--font-arabic), serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--emerald-dark);
+  line-height: 1.2;
+}
+
+.pill-bn {
+  font-family: var(--font-bangla), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
 @keyframes pop-in {
   0% { transform: scale(0); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
