@@ -3,7 +3,7 @@ import asyncio
 import edge_tts
 from generate_hd_audio import (
     ARABIC_DATA, BANGLA_DATA, ENGLISH_DATA, NUMBERS_DATA,
-    DUAS_DATA, PRAYERS_DATA, NATURE_DATA
+    DUAS_DATA, KALIMA_DATA, PRAYERS_DATA, NATURE_DATA
 )
 
 VOICE_BN = 'bn-BD-NabanitaNeural'  # Native Bangladeshi female teacher voice
@@ -45,6 +45,11 @@ async def main():
     for item in DUAS_DATA:
         did, text_bn, text_en = item
         tasks.append(generate_clip(text_bn, VOICE_BN, f"assets/audio/duas/{did}.mp3"))
+
+    # 4.1. 4 Kalimas: Native Bangladeshi explanation
+    for item in KALIMA_DATA:
+        kid, text_bn, text_en = item
+        tasks.append(generate_clip(text_bn, VOICE_BN, f"assets/audio/kalima/{kid}.mp3"))
 
     # 5. Prayers & Pillars: Native Bangladeshi
     for item in PRAYERS_DATA:

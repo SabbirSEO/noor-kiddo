@@ -479,6 +479,58 @@
     }
   ];
 
+  // 5.1. FOUR KALIMAS (৪ কালিমা)
+  const KALIMA_DATA = [
+    {
+      id: 'kal-1',
+      titleBn: '১. কালিমা তাইয়্যেবাহ',
+      titleEn: '1. Kalima Tayyibah',
+      subtitleBn: 'পবিত্র কালিমা (Kalima of Purity)',
+      arabic: 'لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَسُولُ اللّٰهِ',
+      translit: 'La ilaha illallah, Muhammadur Rasulullah',
+      meaningBn: 'আল্লাহ ছাড়া কোনো উপাস্য নেই, মুহাম্মাদ (সা.) আল্লাহর রাসুল।',
+      meaningEn: 'There is no god but Allah, Muhammad (pbuh) is the Messenger of Allah.',
+      emoji: '🕋',
+      theme: 'emerald'
+    },
+    {
+      id: 'kal-2',
+      titleBn: '২. কালিমা শাহাদাত',
+      titleEn: '2. Kalima Shahadat',
+      subtitleBn: 'সাক্ষ্যদানের কালিমা (Kalima of Testimony)',
+      arabic: 'أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ',
+      translit: "Ash-hadu alla ilaha illallahu wahdahu la sharika lahu, wa ash-hadu anna Muhammadan 'abduhu wa rasuluh",
+      meaningBn: 'আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি একক, তাঁর কোনো শরিক নেই। এবং আরও সাক্ষ্য দিচ্ছি যে, নিশ্চয়ই মুহাম্মাদ (সা.) তাঁর বান্দা ও রাসুল।',
+      meaningEn: 'I bear witness that there is no god but Allah, alone without partner, and I bear witness that Muhammad is His servant and Messenger.',
+      emoji: '☝️',
+      theme: 'sky'
+    },
+    {
+      id: 'kal-3',
+      titleBn: '৩. কালিমা তামজীদ',
+      titleEn: '3. Kalima Tamjeed',
+      subtitleBn: 'শ্রেষ্ঠত্ব ও প্রশংসার কালিমা (Kalima of Glory)',
+      arabic: 'سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلّٰهِ وَلَا إِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ الْعَلِيِّ الْعَظِيمِ',
+      translit: "Subhanallahi wal hamdulillahi wa la ilaha illallahu wallahu akbar, wa la hawla wa la quwwata illa billahil 'aliyyil 'azeem",
+      meaningBn: 'আল্লাহ অতি পবিত্র, সমস্ত প্রশংসা আল্লাহর, আল্লাহ ছাড়া কোনো উপাস্য নেই এবং আল্লাহ সর্বশ্রেষ্ঠ। মহান আল্লাহর সাহায্য ছাড়া পাপ থেকে বাঁচার এবং সৎ কাজ করার কোনো ক্ষমতা নেই।',
+      meaningEn: 'Glory be to Allah, all praise is for Allah, there is no god but Allah, and Allah is the Greatest. There is no power or might except with Allah, the Most High, the Supreme.',
+      emoji: '📿',
+      theme: 'amber'
+    },
+    {
+      id: 'kal-4',
+      titleBn: '৪. কালিমা তাওহীদ',
+      titleEn: '4. Kalima Tawheed',
+      subtitleBn: 'একত্ববাদের কালিমা (Kalima of Oneness)',
+      arabic: 'لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ، بِيَدِهِ الْخَيْرُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',
+      translit: "La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, yuhyee wa yumeetu, biyadihil khayru, wa huwa 'ala kulli shay'in qadeer",
+      meaningBn: 'আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি একক, তাঁর কোনো শরিক নেই। রাজত্ব একমাত্র তাঁরই এবং সমস্ত প্রশংসাও তাঁরই। তিনিই জীবন ও মৃত্যু দেন, সমস্ত কল্যাণ তাঁরই হাতে এবং তিনি সকল কিছুর ওপর সর্বশক্তিমান।',
+      meaningEn: 'There is no god but Allah, alone without partner. To Him belongs sovereignty and praise. He gives life and causes death, in His hand is all good, and He has power over all things.',
+      emoji: '🌟',
+      theme: 'rose'
+    }
+  ];
+
   // 6. PRAYERS & PILLARS & WUDU (নামাজ ও রুকন)
   const PRAYERS_PILLARS = [
     // 5 Prayers
@@ -866,7 +918,7 @@
     },
 
     updateStats() {
-      const totalItems = ARABIC_LETTERS.length + BANGLA_LETTERS.length + ENGLISH_LETTERS.length + NUMBERS_DATA.length + DUAS_DATA.length + PRAYERS_PILLARS.length + NATURE_CREATION.length;
+      const totalItems = ARABIC_LETTERS.length + BANGLA_LETTERS.length + ENGLISH_LETTERS.length + NUMBERS_DATA.length + DUAS_DATA.length + KALIMA_DATA.length + PRAYERS_PILLARS.length + NATURE_CREATION.length;
       const exploredCount = state.seenItems.size;
 
       if (this.elements.statsExploredCount) {
@@ -919,6 +971,9 @@
         this.elements.subFilterBar.style.display = 'none';
       } else if (shelf === 'duas') {
         items = DUAS_DATA;
+        this.elements.subFilterBar.style.display = 'none';
+      } else if (shelf === 'kalima') {
+        items = KALIMA_DATA;
         this.elements.subFilterBar.style.display = 'none';
       } else if (shelf === 'prayers') {
         items = PRAYERS_PILLARS;
@@ -1063,6 +1118,22 @@
         hint.className = 'card-hint';
         hint.textContent = item.translit;
         card.appendChild(hint);
+      } else if (shelf === 'kalima') {
+        const illus = document.createElement('div');
+        illus.className = 'card-illustration';
+        illus.style.fontSize = '2.2rem';
+        illus.textContent = item.emoji;
+        card.appendChild(illus);
+
+        const title = document.createElement('div');
+        title.className = 'card-word';
+        title.textContent = state.lang === 'en' ? item.titleEn : item.titleBn;
+        card.appendChild(title);
+
+        const hint = document.createElement('div');
+        hint.className = 'card-hint';
+        hint.textContent = item.subtitleBn || item.translit;
+        card.appendChild(hint);
       } else if (shelf === 'prayers') {
         const illus = document.createElement('div');
         illus.className = 'card-illustration';
@@ -1173,6 +1244,13 @@
         this.elements.stagePhonetic.textContent = item.translit;
         this.elements.stagePrimaryWord.textContent = item.arabic;
         this.elements.stageMeaning.textContent = state.lang === 'en' ? `${item.titleEn}: ${item.meaningEn}` : `${item.titleBn}: ${item.meaningBn}`;
+      } else if (state.activeShelf === 'kalima') {
+        this.elements.stageSymbol.textContent = '📿';
+        this.elements.stageEmoji.textContent = item.emoji;
+        this.elements.stageCategoryPill.textContent = '৪ কালিমা (Four Kalimas)';
+        this.elements.stagePhonetic.textContent = item.translit;
+        this.elements.stagePrimaryWord.textContent = item.arabic;
+        this.elements.stageMeaning.textContent = state.lang === 'en' ? `${item.titleEn}: ${item.meaningEn}` : `${item.titleBn}: ${item.meaningBn}`;
       } else if (state.activeShelf === 'prayers') {
         this.elements.stageSymbol.textContent = '🕌';
         this.elements.stageEmoji.textContent = item.emoji;
@@ -1219,6 +1297,9 @@
       } else if (state.activeShelf === 'duas') {
         const audioSrc = `assets/audio/duas/${item.id}.mp3`;
         audioPlayer.play(audioSrc, `${item.translit}. ${item.meaningBn}`, 'bn');
+      } else if (state.activeShelf === 'kalima') {
+        const audioSrc = `assets/audio/kalima/${item.id}.mp3`;
+        audioPlayer.play(audioSrc, `${item.titleBn}। ${item.translit}। ${item.meaningBn}`, 'bn');
       } else if (state.activeShelf === 'prayers') {
         const audioSrc = `assets/audio/prayers/${item.id}.mp3`;
         audioPlayer.play(audioSrc, state.lang === 'en' ? item.titleEn : item.titleBn, state.lang);
@@ -1240,12 +1321,13 @@
       this.elements.gameRoundNum.textContent = `${state.quiz.round} / ${state.quiz.totalRounds}`;
       this.elements.gameScoreNum.textContent = `${state.quiz.score} ⭐`;
 
-      // Pick question pool from arabic, bangla, english, numbers, and nature
+      // Pick question pool from arabic, bangla, english, numbers, kalima, and nature
       const pool = [
         ...ARABIC_LETTERS.map(x => ({ type: 'arabic', target: x, label: `আলিফ-বা: “${x.nameBn} (${x.char})”`, promptSpeech: `খুঁজে বের করো: ${x.nameBn}`, display: x.char, emoji: x.emoji, name: x.nameBn })),
         ...BANGLA_LETTERS.slice(0, 20).map(x => ({ type: 'bangla', target: x, label: `বাংলা বর্ণ: “${x.char}” (${x.nameBn})`, promptSpeech: `খুঁজে বের করো: ${x.char}, ${x.nameBn}`, display: x.char, emoji: x.emoji, name: x.nameBn })),
         ...ENGLISH_LETTERS.slice(0, 15).map(x => ({ type: 'english', target: x, label: `Letter “${x.char}” (${x.nameEn})`, promptSpeech: `Find letter ${x.char}, for ${x.nameEn}`, display: x.char, emoji: x.emoji, name: x.nameEn })),
         ...NUMBERS_DATA.slice(0, 10).map(x => ({ type: 'number', target: x, label: `সংখ্যা: “${x.charBn} (${x.wordBn})”`, promptSpeech: `খুঁজে বের করো সংখ্যা: ${x.wordBn}`, display: x.charBn, emoji: x.itemEmoji, name: x.wordBn })),
+        ...KALIMA_DATA.map(x => ({ type: 'kalima', target: x, label: `কালিমা: “${x.titleBn}”`, promptSpeech: `খুঁজে বের করো: ${x.titleBn}`, display: x.emoji, emoji: x.emoji, name: x.titleBn })),
         ...NATURE_CREATION.slice(0, 10).map(x => ({ type: 'nature', target: x, label: `আল্লাহর সৃষ্টি: “${x.nameBn}”`, promptSpeech: `খুঁজে বের করো: ${x.nameBn}`, display: x.emoji, emoji: x.emoji, name: x.nameBn }))
       ];
 
@@ -1294,6 +1376,7 @@
         else if (type === 'bangla') audioSrc = `assets/audio/bangla/${item.id}.mp3`;
         else if (type === 'english') audioSrc = `assets/audio/english/${item.id}.mp3`;
         else if (type === 'number') audioSrc = `assets/audio/numbers/num-bn-${item.num}.mp3`;
+        else if (type === 'kalima') audioSrc = `assets/audio/kalima/${item.id}.mp3`;
         else if (type === 'nature') audioSrc = `assets/audio/nature/${item.id}.mp3`;
 
         audioPlayer.play(audioSrc, state.quiz.targetItem.promptSpeech, 'bn');

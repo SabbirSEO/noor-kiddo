@@ -11,7 +11,7 @@ import urllib.error
 
 # Directories
 BASE_DIR = 'assets/audio'
-DIRS = ['arabic', 'bangla', 'english', 'numbers', 'duas', 'prayers', 'nature']
+DIRS = ['arabic', 'bangla', 'english', 'numbers', 'duas', 'kalima', 'prayers', 'nature']
 for d in DIRS:
     os.makedirs(os.path.join(BASE_DIR, d), exist_ok=True)
 
@@ -167,6 +167,14 @@ DUAS_DATA = [
     ('dua-8', 'জ্ঞান বৃদ্ধির দো’আ। রাব্বি যিদনী ইলমা। হে আমার প্রতিপালক, আমার জ্ঞান বাড়িয়ে দিন।', 'Rabbi Zidni Ilma. O Lord, increase me in knowledge.')
 ]
 
+# 5.1. Four Kalimas
+KALIMA_DATA = [
+    ('kal-1', 'কালিমা তাইয়্যেবাহ। লা ইলাহা ইল্লাল্লাহু মুহাম্মাদুর রাসুলুল্লাহ। আল্লাহ ছাড়া কোনো উপাস্য নেই, মুহাম্মাদ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম আল্লাহর রাসুল।', 'Kalima Tayyibah. There is no god but Allah, Muhammad is His Messenger.'),
+    ('kal-2', 'কালিমা শাহাদাত। আশহাদু আল্লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহু, ওয়া আশহাদু আন্না মুহাম্মাদান আবদুহু ওয়া রাসুলুহু। আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি একক, তাঁর কোনো শরিক নেই। এবং নিশ্চয়ই মুহাম্মাদ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম তাঁর বান্দা ও রাসুল।', 'Kalima Shahadat. I bear witness that there is no god but Allah, and Muhammad is His servant and Messenger.'),
+    ('kal-3', 'কালিমা তামজীদ। সুবহানাল্লাহি ওয়াল হামদুলিল্লাহি ওয়া লা ইলাহা ইল্লাল্লাহু ওয়াল্লাহু আকবার, ওয়া লা হাওলা ওয়া লা কুওয়াতা ইল্লা বিল্লাহিল আলিয়্যিল আজীম। আল্লাহ অতি পবিত্র, সমস্ত প্রশংসা আল্লাহর, আল্লাহ ছাড়া কোনো উপাস্য নেই এবং আল্লাহ সর্বশ্রেষ্ঠ।', 'Kalima Tamjeed. Glory be to Allah, all praise is for Allah, there is no god but Allah, and Allah is the Greatest.'),
+    ('kal-4', 'কালিমা তাওহীদ। লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহু, লাহুল মুলকু ওয়া লাহুল হামদু, ইউহয়ী ওয়া ইউমীতু, বিয়াদিহিল খাইরু, ওয়া হুয়া আলা কুল্লি শাইয়িন ক্বাদীর। আল্লাহ ছাড়া কোনো উপাস্য নেই, তিনি এক, রাজত্ব ও সমস্ত প্রশংসা একমাত্র তাঁরই।', 'Kalima Tawheed. There is no god but Allah, He is One, to Him belongs all sovereignty and praise.')
+]
+
 # 6. Prayers & Pillars
 PRAYERS_DATA = [
     ('pr-1', 'ফজর নামাজ। ভোরবেলার শান্ত নামাজ, দুই রাকাত ফরজ।', 'Fajr prayer at dawn.'),
@@ -277,6 +285,9 @@ def build_all_items():
     # 5. Duas
     for did, text_bn, text_en in DUAS_DATA:
         items.append((text_bn, f"assets/audio/duas/{did}.mp3"))
+    # 5.1. Kalimas
+    for kid, text_bn, text_en in KALIMA_DATA:
+        items.append((text_bn, f"assets/audio/kalima/{kid}.mp3"))
     # 6. Prayers & Pillars
     for pid, text_bn, text_en in PRAYERS_DATA:
         items.append((text_bn, f"assets/audio/prayers/{pid}.mp3"))
